@@ -1,0 +1,17 @@
+
+Struture:
+  
+  1) Introdution  
+    1.1) Percetron
+    1.2) FCN
+    1.3) CNN
+      1.3.1) Convolution (continous and discrete) and Pooling
+      1.3.2) How CNN sees
+    1.4) Transformer
+      1.4.1) Attention (Geral introduction and self-attention focus)
+      1.4.2) Architeture overlook
+        1.4.2.1) Trainning ???
+      1.4.3) Tranformer applied to Vision (Vit)
+
+  2)
+
