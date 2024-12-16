@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 from torchvision.transforms import ToTensor
 
-from torchvision.models  import vit_b_16
+from torchvision.models  import vit_b_16, ViT_B_16_Weights
 
 device = (
         "cuda" if torch.cuda.is_available()
@@ -94,7 +94,7 @@ def test(dataloader, model, loss_fn):
     print(f"Test Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg Loss: {test_loss:>8f}\n")
 
 if __name__ == '__main__':
-    batch_size = 16
+    batch_size = 128
     epochs = 50
     num_classes = 10
 
@@ -102,7 +102,8 @@ if __name__ == '__main__':
 
     training_dataloader, test_dataloader = load_data()
 
-    model = vit_b_16(weights=None)
+    weights = ViT_B_16_Weights.DEFAULT
+    model = vit_b_16(weights=weights)
     model.heads.head = torch.nn.Linear(model.heads.head.in_features, num_classes)
     model = model.to(device)
 
